@@ -647,7 +647,7 @@ func (enc *Encoder) Encode(w io.Writer, a APNG) error {
 	if enc.BufferPool != nil {
 		buffer := enc.BufferPool.Get()
 		e = (*encoder)(buffer)
-
+		e.seq = 0
 	}
 	if e == nil {
 		e = &encoder{}
